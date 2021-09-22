@@ -4,7 +4,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_wordpress_app/common/constants.dart';
-import 'package:flutter_wordpress_app/models/Article.dart';
+import 'package:flutter_wordpress_app/models/article.dart';
 import 'package:flutter_wordpress_app/pages/single_article.dart';
 import 'package:flutter_wordpress_app/widgets/articleBox.dart';
 import 'package:flutter_wordpress_app/widgets/searchBoxes.dart';
