@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_wordpress_app/common/constants.dart';
 import 'package:flutter_wordpress_app/pages/articles.dart';
@@ -5,7 +7,12 @@ import 'package:flutter_wordpress_app/pages/local_articles.dart';
 import 'package:flutter_wordpress_app/pages/search.dart';
 import 'package:flutter_wordpress_app/pages/settings.dart';
 
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
+
+void main(){
+  HttpOverrides.global = new MyHttpOverrides(); // remove this line in Produciton
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -41,6 +48,18 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
+
+
+// Remove this class in Production phase
+class MyHttpOverrides extends HttpOverrides{
+  @override
+  HttpClient createHttpClient(SecurityContext? context){
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
+  }
+}
+
+
 
 class _MyHomePageState extends State<MyHomePage> {
 
