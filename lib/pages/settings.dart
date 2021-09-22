@@ -49,7 +49,7 @@ class _SettingsState extends State<Settings> {
               alignment: Alignment.center,
               padding: EdgeInsets.fromLTRB(0, 10, 0, 20),
               child: Text(
-                "Version 2.0.0 \n flutterblog.crumet.com \n Demo flutter app for wordpress news website",
+                "Version 2.0.0 \n demo.mytech.com \n Demo flutter app for wordpress news website",
                 textAlign: TextAlign.center,
                 style: TextStyle(height: 1.6, color: Colors.black87),
               ),
@@ -73,7 +73,7 @@ class _SettingsState extends State<Settings> {
                     children: <Widget>[
                       TextButton(
                           onPressed: () async {
-                            const url = 'https://flutterblog.crumet.com';
+                            const url = 'https://demo.mytech.com';
                             if (await canLaunch(url)) {
                               await launch(url);
                             } else {
@@ -81,12 +81,12 @@ class _SettingsState extends State<Settings> {
                             }
                           },
                           child: Text(
-                            "flutterblog.crumet.com",
+                            "demo.mytech.com",
                             style: TextStyle(color: Colors.black54),
                           )),
                       TextButton(
                           onPressed: () async {
-                            const url = 'mailto:info@crumet.com';
+                            const url = 'mailto:me@bothe.in';
                             if (await canLaunch(url)) {
                               await launch(url);
                             } else {
@@ -94,7 +94,7 @@ class _SettingsState extends State<Settings> {
                             }
                           },
                           child: Text(
-                            "info@crumet.com",
+                            "me@bothe.in",
                             style: TextStyle(color: Colors.black54),
                           )),
                     ],
@@ -103,7 +103,7 @@ class _SettingsState extends State<Settings> {
                 InkWell(
                   onTap: () {
                     Share.share(
-                        'Check out our blog: https://flutterblog.crumet.com');
+                        'Check out our blog: https://demo.mytech.com');
                   },
                   child: ListTile(
                     leading: Image.asset(
@@ -111,7 +111,7 @@ class _SettingsState extends State<Settings> {
                       width: 30,
                     ),
                     title: Text('Share'),
-                    subtitle: Text("Spread the words of flutter blog crumet"),
+                    subtitle: Text("Spread the words of flutter blog"),
                   ),
                 ),
               ],
