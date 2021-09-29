@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_wordpress_app/common/constants.dart';
 import 'package:flutter_wordpress_app/pages/articles.dart';
@@ -7,12 +5,8 @@ import 'package:flutter_wordpress_app/pages/local_articles.dart';
 import 'package:flutter_wordpress_app/pages/search.dart';
 import 'package:flutter_wordpress_app/pages/settings.dart';
 
-// void main() => runApp(MyApp());
+void main() => runApp(MyApp());
 
-void main(){
-  HttpOverrides.global = new MyHttpOverrides(); // remove this line in Produciton
-  runApp(new MyApp());
-}
 
 class MyApp extends StatelessWidget {
   @override
@@ -34,10 +28,10 @@ class MyApp extends StatelessWidget {
               ),
               caption: TextStyle(color: Colors.black45, fontSize: 10),
               bodyText1: TextStyle(
-                fontSize: 16,
-                height: 1.5,
-                color: Colors.black87,
-                fontWeight: FontWeight.normal
+                  fontSize: 16,
+                  height: 1.5,
+                  color: Colors.black87,
+                  fontWeight: FontWeight.normal
               )),
         ),
         home: MyHomePage());
@@ -48,17 +42,6 @@ class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
-
-
-// Remove this class in Production phase
-class MyHttpOverrides extends HttpOverrides{
-  @override
-  HttpClient createHttpClient(SecurityContext? context){
-    return super.createHttpClient(context)
-      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
-  }
-}
-
 
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -86,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
           selectedLabelStyle:
-              TextStyle(fontWeight: FontWeight.w500, fontFamily: "Soleil"),
+          TextStyle(fontWeight: FontWeight.w500, fontFamily: "Soleil"),
           unselectedLabelStyle: TextStyle(fontFamily: "Soleil"),
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
